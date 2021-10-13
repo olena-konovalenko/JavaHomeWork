@@ -4,9 +4,9 @@ package com.pb.ekonovalenko.hm2;
 import java.util.Scanner;
 
 public class Calculator {
-    public static void main(String [] args) {
+    public static void main(String[] args) {
         int operand1;
-        String sing="+";
+        String sing = "+";
         int operand2;
 
         Scanner scan = new Scanner(System.in);
@@ -22,20 +22,26 @@ public class Calculator {
         switch (sing) {
             case "+":
                 System.out.print("Сумма выших чисел = ");
-                System.out.println(operand1+operand2);
+                System.out.println(operand1 + operand2);
                 break;
             case "-":
                 System.out.print("Разница выших чисел = ");
-                System.out.println(operand1-operand2);
+                System.out.println(operand1 - operand2);
                 break;
             case "*":
                 System.out.print("Произведение выших чисел = ");
-                System.out.println(operand1*operand2);
+                System.out.println(operand1 * operand2);
                 break;
             case "/":
                 System.out.print("Отношение выших чисел = ");
-                System.out.println(operand1/operand2);
+                if (operand2 == 0) {
+                    System.out.print("На 0 дельть - НЕЛЬЗЯ");
+                } else {
+                    System.out.println(operand1 / operand2);
+                }
                 break;
+            default:
+                System.out.print("Не верный знак операции для калькулятора");
         }
     }
 }
